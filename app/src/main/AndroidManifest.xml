@@ -31,6 +31,12 @@
             android:enabled="true"
             android:exported="true" >
         </service>
+
+        <activity
+            android:name=".ReminderActivity"
+            android:theme="@style/Theme.Transparent"
+            android:label="@string/title_activity_reminder" >
+        </activity>
     </application>
 
 </manifest>

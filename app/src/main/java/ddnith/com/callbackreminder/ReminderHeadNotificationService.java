@@ -18,7 +18,7 @@ public class ReminderHeadNotificationService extends Service {
     private ImageView reminderHead;
     private Handler mHandler;
     private final int FINISH_REMINDER_NOTIFICATION_HEAD = 0;
-    private final int FINISH_REMINDER_NOTIFICATION_HEAD_DELAY = 5000;
+    private final int FINISH_REMINDER_NOTIFICATION_HEAD_DELAY = 10000;
     public ReminderHeadNotificationService() {
     }
 
@@ -41,7 +41,7 @@ public class ReminderHeadNotificationService extends Service {
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSLUCENT);
 
-        params.gravity = Gravity.TOP | Gravity.LEFT;
+        params.gravity = Gravity.BOTTOM | Gravity.RIGHT;
         params.x = 0;
         params.y = 100;
 
@@ -49,7 +49,7 @@ public class ReminderHeadNotificationService extends Service {
         reminderHead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),MyActivity.class);
+                Intent i = new Intent(getApplicationContext(),ReminderActivity.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     getApplicationContext().startActivity(i);
                 stopSelf();
